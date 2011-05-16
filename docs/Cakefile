@@ -1,0 +1,6 @@
+
+{exec} = require 'child_process'
+
+task 'build', () ->
+  exec "cd .. && coffee foss-credits.coffee chromium foss_credits > docs/example.html"
+
