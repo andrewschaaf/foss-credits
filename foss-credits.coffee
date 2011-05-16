@@ -1,44 +1,39 @@
 
 
-def foss_credits_html(info)
-  return "<html><head>#{js}#{css}</head><body>#{body(info)}</body></html>"
-end
+htmlFor = (info) ->
+  "<html><head>#{JS}#{CSS}</head><body>#{bodyFor(info)}</body></html>"
 
 
-def body(info)
+bodyFor = (info) ->
   arr = []
-  info[:items].each_index do |i|
-    item = info[:items][i]
-    arr.push('  <div class="item">
+  for item, i in info.items
+    arr.push """<div class="item">
     <table class="header">
       <tr>
         <td class="header_left">
-          ' + item[:name] + '
+          #{item.name}
         </td>
         <td class="header_right">
-          <a href="' + item[:website] + '">website</a>
+          <a href="#{item.website}">website</a>
           &ndash;
           <a href="#"
-                onclick="toggleLicense(' + i.to_s + ');"
-                id="toggler_' + i.to_s + '">
+                onclick="toggleLicense(#{i});"
+                id="toggler_#{i}">
             show license
           </a>
         </td>
       </tr>
     </table>
-    <div class="license" id="license_' + i.to_s + '">
+    <div class="license" id="license_#{i}">
       <pre>
-' + item[:license] + '
+#{item.license}
 </pre>
     </div>
-  </div>')
-  end
+  </div>"""
   arr.join "\n\n"
-end
 
 
-def js()
-  <<-END
+JS = """
   <script type="text/javascript" charset="utf-8">
     var toggleLicense = function(n) {
       var license = document.getElementById("license_" + n);
@@ -55,11 +50,11 @@ def js()
       }
     };
   </script>
-  END
-end
+"""
 
-def css()
-  <<-END
+
+CSS = """
+
   <style type="text/css" media="screen">
     
     body {
@@ -96,6 +91,5 @@ def css()
     }
     
   </style>
-  END
-end
 
+"""
