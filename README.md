@@ -16,9 +16,9 @@ coffee foss-credits.coffee foss_credits chromium node gem__oily_png ... > credit
 </pre>
 
 
-## Usage: htmlsFor
+## Usage: htmlFor
 <pre>
-html = htmlsFor({
+html = htmlFor({
   items: [
     {
       "name": "Foo",
