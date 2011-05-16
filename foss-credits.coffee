@@ -1,5 +1,12 @@
 
 
+main = () ->
+  packages = process.argv[2...]
+  process.stdout.write htmlFor {
+    items: (require("./../foss-credits-collection/licenses/#{x}.coffee") for x in packages)
+  }
+
+
 htmlFor = (info) ->
   "<html><head>#{JS}#{CSS}</head><body>#{bodyFor(info)}</body></html>"
 
@@ -93,3 +100,7 @@ CSS = """
   </style>
 
 """
+
+if not module.parent
+  main()
+
