@@ -1,9 +1,21 @@
 
+{licenses} = require 'foss-credits-collection'
+optimist = require 'optimist'
 
-main = () ->
-  packages = process.argv[2...]
+
+exports.main = main = () ->
+  slugs = optimist.argv._
+  
+  items = []
+  for x in slugs
+    if licenses[x]
+      items.push licenses[x]
+    else
+      console.log "Error: couldn't find a license for #{JSON.stringify(x)}"
+      process.exit 1
+  
   process.stdout.write htmlFor {
-    items: (require("./../foss-credits-collection/licenses/#{x}.coffee") for x in packages)
+    items: (licenses[x] for x in slugs)
   }
 
 
