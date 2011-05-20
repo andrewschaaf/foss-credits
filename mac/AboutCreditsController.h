@@ -2,7 +2,8 @@
 #import <Foundation/Foundation.h>
 #import <WebKit/WebKit.h>
 
-@interface AboutCreditsController : NSObject <NSWindowDelegate> {
+@interface AboutCreditsController : NSObject {
+  
 @private
     NSWindow *window;
 }

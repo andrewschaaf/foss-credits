@@ -2,8 +2,8 @@
 #import <Foundation/Foundation.h>
 #import "AboutCreditsController.h"
 
+@interface AboutController : NSObject {
 
-@interface AboutController : NSObject <NSWindowDelegate> {
 @private
     
     NSWindow *window;
