@@ -3,12 +3,8 @@
 
 ![](//github.com/andrewschaaf/foss-credits/raw/master/docs/example.png)
 
+
 ## Usage: Command-line + [foss-credits-collection](https://github.com/andrewschaaf/foss-credits-collection)
-
-Prereqs:
-
-* coffee-script
-* foss-credits-collection in the same folder as foss-credits
 
 <pre>
 cd foss-credits
@@ -28,3 +24,7 @@ html = htmlFor({
   ]
 })
 </pre>
+
+## See also
+
+* [foss-credits-mac](https://github.com/andrewschaaf/foss-credits-mac)
