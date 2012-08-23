@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/andrewschaaf/foss-credits.png)](http://travis-ci.org/andrewschaaf/foss-credits)
 
 ## Example
 
